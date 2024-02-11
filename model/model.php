@@ -17,6 +17,27 @@ function getPDO()
     return $dbh;
 }
 
+function updateMeetingById($execute){
+    $query = 'UPDATE betanias.meetings SET meetings.friends=:friends, meetings.Siblings=:siblings, meetings.childrens=:childrens, meetings.date_meeting=:date_meeting, meetings.offering=:offering, meetings.Betanias_id_betania=:id_betania WHERE meetings.id_meeting =:id_meeting';
+    return updateById($query, $execute);
+}
+
+function updateById($query, $execute)
+{
+    try {
+        $dbh = getPDO();
+        $statment = $dbh->prepare($query);
+        $statment->execute($execute);//prepare query
+        $queryResult = $statment->fetch(PDO::FETCH_ASSOC);//prepare result for client
+        $dbh = null;
+        if ($debug) var_dump($queryResult);
+        return $queryResult;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
+
 function createItem($query, $execute)
 {
     $dbh = getPDO();

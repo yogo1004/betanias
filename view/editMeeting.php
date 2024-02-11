@@ -13,6 +13,7 @@ ob_start();
             <form method="post" action="index.php?action=editMeeting&id_betania=<?=$id_betania?>" id="formEdit">
             <!-- Modal --> 
             <input type="hidden" name="id_betania" value="<?=$id_betania?>" >   
+            <input type="hidden" name="id_meeting" value="<?=$meeting['id_meeting']?>" >   
             <div  id="exampleModalCenter" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">

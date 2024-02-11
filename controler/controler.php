@@ -103,6 +103,19 @@ function editMeetingPage($idMeeting,$id_betania){
 }
 
 function editMeeting($id_betania, $id_meeting, $date_meeting, $friends, $siblings,$childrens, $offering){
-    
+    $execute = [
+        'friends' => $friends,
+        'siblings' => $siblings,
+        'childrens' => $childrens,
+        'date_meeting' => $date_meeting,
+        'offering' => $offering,
+        'id_betania' => $id_betania,
+        'id_meeting' => $id_meeting,
+
+    ];
+
+    var_dump($execute);
+   $new = updateMeetingById($execute);
+
     betania($id_betania);
 }
