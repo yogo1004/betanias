@@ -64,6 +64,11 @@
                             Añadir una reunion
                         </button>
                     </li>
+                    <li class=" border border-danger h-100">
+                        <button style="width: 300px" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleAddResponsible">
+                            Añadir responsable
+                        </button>
+                    </li>
                 </ul>
                         
             </div>
@@ -78,7 +83,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Ajouter un utilisateur</h5>
+                            <h5 class="modal-title" id="exampleModalLongTitle">Añadir una reunion</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -127,6 +132,72 @@
                 </div>
                                 </form>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="col-12">
+            <form method="post" action="index.php?action=addResponsible" id="formAddResponsible">
+            <!-- Modal --> 
+                <div class="modal fade bg-info" id="exampleAddResponsible" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Añadir un responsable</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+    
+                        <div class="form-row">
+                            <div class="col">
+                                <input type="text" name="responsible" required class="form-control"
+                                       placeholder="Responsable">
+                            </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                        <!-- Modal -->
+    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Anular</button>
+                        <button type="submit" form="formAddResponsible" id="save" class="btn btn-primary">Añadir</button>
+                    </div>
+                    </div>
+                </div>
+                                </form>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <hr class=" pt-0 pb-0 mb-0 pb-0"
         style="height:3px;border-width:0;color:#ff0000;background-color:#ff0000; margin-top: 0;">
 </div>

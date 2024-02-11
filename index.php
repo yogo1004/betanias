@@ -19,7 +19,10 @@ if (isset($_GET['action'])) {
 
 switch ($action) {
 
+case addResponsible:
 
+    addResponsible();
+    break;
     case 'deleteMeeting':
         deleteMeeting($_GET['id_meeting'], $_GET['id_betania']);
         break;
