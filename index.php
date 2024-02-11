@@ -19,7 +19,26 @@ if (isset($_GET['action'])) {
 
 switch ($action) {
     case 'editMeeting':
-        editpage($_GET['id_meeting'], $_GET['id_betania']);
+
+        $id_meeting = $_GET['id_meeting'];
+        $id_betania =  $_GET['id_betania'];
+        $date_meeting  = $_POST['date_meeting'];
+        $friends  = $_POST['friends'];
+        $siblings = $_POST['siblings'];
+        $childrens = $_POST['childrens'];
+        $offering  = $_POST['offering'];
+
+        var_dump($id_betania);
+        editMeeting($id_betania, $id_meeting, $date_meeting, $friends, $siblings,$childrens, $offering);
+        break;
+    case 'editMeetingPage':
+        $date_meeting  = $_POST['date_meeting'];
+        $friends  = $_POST['friends'];
+        $siblings = $_POST['siblings'];
+        $childrens = $_POST['childrens'];
+        $offering  = $_POST['offering'];
+
+        editMeetingPage($_GET['id_meeting'], $_GET['id_betania']);
         break;
     case 'addMeeting':
     $id_betania  = $_POST['id_betania'];

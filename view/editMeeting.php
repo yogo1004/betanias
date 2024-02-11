@@ -10,9 +10,10 @@ ob_start();
 
 ?>
 <div class="col-12">
-            <form method="post" action="index.php?action=addMeeting" id="formEdit">
+            <form method="post" action="index.php?action=editMeeting&id_betania=<?=$id_betania?>" id="formEdit">
             <!-- Modal --> 
-                <div  id="exampleModalCenter" tabindex="-1" role="dialog"
+            <input type="hidden" name="id_betania" value="<?=$id_betania?>" >   
+            <div  id="exampleModalCenter" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
@@ -24,7 +25,7 @@ ob_start();
     
                         <div class="form-row">
                             <div class="col">
-                                <input type="date" name="date_betania" required class="form-control"
+                                <input type="date" name="date_meeting" required class="form-control"
                                 value="<?=$meeting['date_meeting']?>"  placeholder="Fecha de la reunion">
                             </div>
                             <div class="col">
@@ -50,8 +51,7 @@ ob_start();
     
                     <div class="modal-footer">
                     <a  class="btn btn-danger" href="index.php?action=betania&id_betania=<?=$id_betania?>" >ELIMINAR</a>
-                        <a  class="btn btn-secondary" href="index.php?action=betania&id_betania=<?=$id_betania?>" >Anular</a>
-                        <button type="submit" form="formEdit" id="save" class="btn btn-primary">Añadir</button>
+                        <button type="submit" form="formEdit" id="save" class="btn btn-primary">EDITAR</button>
                     </div>
                     </div>
                 </div>

@@ -97,7 +97,12 @@ function addMeeting($id_betania,$date_betania,$friends,$siblings,$childrens,$off
    betania($id_betania);
 }
 
-function editpage($idMeeting,$id_betania){
+function editMeetingPage($idMeeting,$id_betania){
    $meeting = getMeetingById($idMeeting);
     require_once 'view/editMeeting.php';
+}
+
+function editMeeting($id_betania, $id_meeting, $date_meeting, $friends, $siblings,$childrens, $offering){
+    
+    betania($id_betania);
 }
