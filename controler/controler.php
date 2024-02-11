@@ -82,3 +82,22 @@ function betania($id_betania)
     
         require_once 'view/betania.php';
 }
+
+function addMeeting($id_betania,$date_betania,$friends,$siblings,$childrens,$offering){
+    $execute = [
+        'friends' => $friends,
+        'siblings' => $siblings,
+        'childrens' => $childrens,
+        'date_meeting' => $date_betania,
+        'offering' => $offering,
+        'id_betania' => $id_betania,
+
+    ];
+    $id =createMeeting($execute);
+   betania($id_betania);
+}
+
+function editpage($idMeeting,$id_betania){
+   $meeting = getMeetingById($idMeeting);
+    require_once 'view/editMeeting.php';
+}

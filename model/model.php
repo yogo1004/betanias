@@ -17,13 +17,42 @@ function getPDO()
     return $dbh;
 }
 
+function createItem($query, $execute)
+{
+    $dbh = getPDO();
+    try {
+        $stmt = $dbh->prepare($query);
+        $stmt->execute($execute);
 
+        $id =   $dbh->lastInsertId();
+        $dbh = null;
+        return $id;
+    } catch (PDOException $e) {
+        print "Error!:" . $e->getMessage() . "<br/>";
+        die();
+    }
+}
+
+function createMeeting($execute){
+    
+    $query = "INSERT INTO meetings(friends, Siblings, childrens, date_meeting, offering, Betanias_id_betania)  
+    VALUES  (:friends, :siblings, :childrens, :date_meeting, :offering, :id_betania)";
+    return createItem($query, $execute);
+
+}
 
 function getBetanias(){
     $query = "SELECT betanias.id_betania, betanias.name from betanias";
     return  getFetchAll($query);
 }
 
+function getMeetingById($id_meeting){
+    $query = "SELECT * FROM meetings WHERE id_meeting =:id_meeting";
+    $execute = [
+        'id_meeting' => $id_meeting
+    ];
+   return getFetchById($query, $execute);
+}
 
 function getBetaniaById($id_betania){
     $query = "SELECT * FROM betanias WHERE id_betania =:id_betania";
