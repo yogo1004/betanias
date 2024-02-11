@@ -16,7 +16,18 @@ function getPDO()
     $dbh = new PDO('mysql:host=' . $dbhost . ';dbname=' . $dbname . ';charset=utf8', $user, $pass);
     return $dbh;
 }
-
+function deleteMeetingModel($id_meeting){
+    try {
+        $dbh = getPDO();
+        $query = 'DELETE from meetings WHERE id_meeting=:id_meeting';
+        $statment = $dbh->prepare($query);
+        $statment->execute(['id_meeting' => $id_meeting]);
+        $dbh = null;
+    } catch (PDOException $e) {
+        print "Error!: " . $e->getMessage() . "<br/>";
+        return null;
+    }
+}
 function updateMeetingById($execute){
     $query = 'UPDATE betanias.meetings SET meetings.friends=:friends, meetings.Siblings=:siblings, meetings.childrens=:childrens, meetings.date_meeting=:date_meeting, meetings.offering=:offering, meetings.Betanias_id_betania=:id_betania WHERE meetings.id_meeting =:id_meeting';
     return updateById($query, $execute);

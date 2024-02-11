@@ -18,6 +18,11 @@ if (isset($_GET['action'])) {
 }
 
 switch ($action) {
+
+
+    case 'deleteMeeting':
+        deleteMeeting($_GET['id_meeting'], $_GET['id_betania']);
+        break;
     case 'editMeeting':
 
         $id_meeting = $_POST['id_meeting'];

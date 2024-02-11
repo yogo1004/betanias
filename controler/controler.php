@@ -119,3 +119,10 @@ function editMeeting($id_betania, $id_meeting, $date_meeting, $friends, $sibling
 
     betania($id_betania);
 }
+
+function deleteMeeting($id_meeting, $id_betania){
+
+  $id =  deleteMeetingModel($id_meeting);
+
+  betania($id_betania);
+}

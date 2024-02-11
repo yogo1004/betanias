@@ -51,12 +51,34 @@ ob_start();
                         <!-- Modal -->
     
                     <div class="modal-footer">
-                    <a  class="btn btn-danger" href="index.php?action=betania&id_betania=<?=$id_betania?>" >ELIMINAR</a>
+                    <a  class="btn btn-danger" data-target="#deleteModal" data-toggle="modal" href="index.php?action=betania&id_betania=<?=$id_betania?>" >ELIMINAR</a>
                         <button type="submit" form="formEdit" id="save" class="btn btn-primary">EDITAR</button>
                     </div>
                     </div>
                 </div>
                                 </form>
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal">
+ <div class="modal-dialog">
+  <div class="modal-content">
+   <div class="modal-header">
+    <h5 class="modal-title bg-danger" id="exampleModalLabel">CUIDADO! VAS A ELIMINAR</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+   </div>
+   <div class="modal-body">
+    <p>Estas seguro de querer eliminar?</p>
+  </div>
+  <div class="modal-footer">
+   <button type="button" class="btn btn-success" id="close-modal">No</button>
+    <a href="index.php?action=deleteMeeting&id_meeting=<?=$meeting['id_meeting']?>&id_betania=<?=$id_betania?>" class="btn btn-danger">SI</a>
+   </div>
+  </div>
+ </div>
+</div>
             </div>
   
 <?php
